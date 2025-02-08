@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+application {
+    mainClassName = 'job.LocationProducer'
+}
+
+
+group = 'job'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':userServiceClient')
+    implementation project(':locationData')
+    implementation 'org.apache.kafka:kafka-clients:3.9.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.2'
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
+jar {
+    manifest {
+        attributes 'Main-Class': 'job.LocationProducer'
+    }
+}

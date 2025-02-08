@@ -1,0 +1,7 @@
+rootProject.name = 'locationTracker'
+include 'consumer'
+include 'producer'
+include 'userService'
+include 'userServiceClient'
+include 'locationData'
+
