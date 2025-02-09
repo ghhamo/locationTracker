@@ -44,10 +44,10 @@ public class UserService {
     @PostConstruct
     public void seedUsers() {
         if (userRepository.count() == 0) {
-            IntStream.range(0, 100).forEach(i -> {
+            IntStream.range(0, 10).forEach(i -> {
                 UserData userData = new UserData();
                 userData.setUsername("User" + i);
-                userData.setDistanceTraveled(random.nextDouble() * 100);
+                userData.setDistanceTraveled(0);
                 userRepository.save(userData);
             });
         }

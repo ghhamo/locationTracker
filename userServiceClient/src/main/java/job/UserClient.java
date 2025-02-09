@@ -66,7 +66,6 @@ public class UserClient {
                 throw new IOException("Unexpected HTTP response: " + response);
             }
             String jsonResponse = response.body().string();
-            System.out.println("Raw JSON response: " + jsonResponse);
             return parseUserDtoList(jsonResponse);
         } catch (IOException e) {
             throw new RuntimeException("Failed to fetch all users", e);
@@ -88,7 +87,6 @@ public class UserClient {
                 throw new IOException("Unexpected HTTP response: " + response);
             }
             String responseBody = response.body().string();
-            System.out.println(responseBody);
             return parseUserDto(responseBody);
         } catch (IOException e) {
             throw new RuntimeException("Failed to update distance for user ID: " + userId, e);
