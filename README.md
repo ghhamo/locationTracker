@@ -23,7 +23,7 @@
    ```
 
 That's it! The application should now be running.
-Producer is sending location updates for 10 users as fast as it can.
+Producer is sending location updates for 10 users with a short delay between each update.
 Consumer is pulling those update in batches every 10 seconds.
 You can see consumer working by looking at logs in consumers docker container.
 

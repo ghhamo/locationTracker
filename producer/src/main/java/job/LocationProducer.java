@@ -36,6 +36,7 @@ public class LocationProducer {
                         newLatitude,
                         newLongitude,
                         userDto.id());
+                datas.put(userDto.id(), data);
                 String message = null;
                 try {
                     message = objectMapper.writeValueAsString(data);
@@ -49,6 +50,7 @@ public class LocationProducer {
                 } catch (Throwable a) {
                     System.out.println(a);
                 }
+                Thread.sleep(100);
             }
         }
     }
